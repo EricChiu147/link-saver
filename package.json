@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A Chrome extension for saving URLs with AI-powered summarization",
   "scripts": {
-    "build": "echo 'No build step required'",
-    "test": "echo 'No tests yet'"
+    "validate": "node scripts/validate.js",
+    "test": "echo 'No tests yet'",
+    "check": "npm run validate"
   },
   "dependencies": {
     "dexie": "^3.2.4"

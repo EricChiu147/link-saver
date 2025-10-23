@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Saver Extension - Testing Guide</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 { color: #667eea; }
+    h2 { color: #764ba2; margin-top: 30px; }
+    .step {
+      background: #f8f9fa;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+    code {
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    .warning {
+      background: #fff3cd;
+      border-left-color: #ffc107;
+      color: #856404;
+    }
+    .success {
+      background: #d4edda;
+      border-left-color: #28a745;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔖 Link Saver Extension - Testing Guide</h1>
+  
+  <p>This guide will help you test the Link Saver Chrome extension.</p>
+
+  <h2>📋 Installation Steps</h2>
+  
+  <div class="step">
+    <strong>Step 1:</strong> Open Chrome and navigate to <code>chrome://extensions/</code>
+  </div>
+  
+  <div class="step">
+    <strong>Step 2:</strong> Enable "Developer mode" using the toggle in the top right corner
+  </div>
+  
+  <div class="step">
+    <strong>Step 3:</strong> Click "Load unpacked" button
+  </div>
+  
+  <div class="step">
+    <strong>Step 4:</strong> Select the extension directory (the folder containing manifest.json)
+  </div>
+  
+  <div class="step success">
+    <strong>✅ Success:</strong> The extension should now appear in your extensions list and toolbar!
+  </div>
+
+  <h2>⚙️ Configuration</h2>
+  
+  <div class="step">
+    <strong>Step 1:</strong> Click the Link Saver extension icon in your toolbar
+  </div>
+  
+  <div class="step">
+    <strong>Step 2:</strong> Click the ⚙️ (Settings) button
+  </div>
+  
+  <div class="step">
+    <strong>Step 3:</strong> Enter your OpenAI API key (get one from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a>)
+  </div>
+  
+  <div class="step">
+    <strong>Step 4:</strong> Click "Save" and optionally "Test Connection" to verify
+  </div>
+
+  <h2>🧪 Testing Features</h2>
+
+  <h3>1. Save a Link</h3>
+  <div class="step">
+    <strong>Action:</strong> Navigate to any webpage (like this one!) and click the "💾 Save" button in the extension popup
+  </div>
+  <div class="step success">
+    <strong>Expected:</strong> An alert should confirm the link was saved, and it should appear in the links list
+  </div>
+
+  <h3>2. View Saved Links</h3>
+  <div class="step">
+    <strong>Action:</strong> Click the extension icon to open the popup
+  </div>
+  <div class="step success">
+    <strong>Expected:</strong> You should see all your saved links with titles, URLs, and AI-generated summaries
+  </div>
+
+  <h3>3. AI Search</h3>
+  <div class="step">
+    <strong>Action:</strong> In the popup, type a question in the "AI Search" field (e.g., "Show me links about testing")
+  </div>
+  <div class="step success">
+    <strong>Expected:</strong> The AI should analyze your links and provide relevant recommendations
+  </div>
+
+  <h3>4. Delete a Link</h3>
+  <div class="step">
+    <strong>Action:</strong> Click the "🗑️ Delete" button next to any saved link
+  </div>
+  <div class="step success">
+    <strong>Expected:</strong> After confirming, the link should be removed from the list
+  </div>
+
+  <h2>🔍 Troubleshooting</h2>
+
+  <div class="step warning">
+    <strong>Issue:</strong> "No API key configured" message<br>
+    <strong>Solution:</strong> Go to Settings (⚙️) and configure your OpenAI API key
+  </div>
+
+  <div class="step warning">
+    <strong>Issue:</strong> Extension not appearing in toolbar<br>
+    <strong>Solution:</strong> Click the puzzle icon in Chrome toolbar and pin the Link Saver extension
+  </div>
+
+  <div class="step warning">
+    <strong>Issue:</strong> Cannot save internal pages<br>
+    <strong>Solution:</strong> Chrome extensions cannot access chrome:// or edge:// pages. Try saving a regular website instead.
+  </div>
+
+  <h2>📊 Sample Content for Testing</h2>
+
+  <p>This page contains sample content that can be used to test the extension's summarization feature:</p>
+
+  <div style="background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px;">
+    <h3>About Web Development</h3>
+    <p>Web development is the work involved in developing websites for the Internet or an intranet. It can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.</p>
+    
+    <h3>JavaScript Programming</h3>
+    <p>JavaScript is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. It enables interactive web pages and is an essential part of web applications.</p>
+    
+    <h3>Chrome Extensions</h3>
+    <p>Chrome extensions are software programs that customize the browsing experience. They enable users to tailor Chrome functionality and behavior to individual needs or preferences.</p>
+  </div>
+
+  <h2>✅ Test Checklist</h2>
+
+  <div class="step">
+    ☐ Extension installed successfully<br>
+    ☐ Settings page opens and API key can be saved<br>
+    ☐ Current page can be saved with "💾 Save" button<br>
+    ☐ Saved links appear in the popup<br>
+    ☐ AI summaries are generated (requires API key)<br>
+    ☐ AI search returns relevant results<br>
+    ☐ Links can be deleted<br>
+    ☐ Links can be opened in new tabs
+  </div>
+
+  <div class="step success" style="margin-top: 30px;">
+    <strong>🎉 Congratulations!</strong> If all tests pass, your Link Saver extension is working perfectly!
+  </div>
+
+</body>
+</html>
