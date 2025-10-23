@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Links</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔖 Saved Links</h1>
+      <div class="header-actions">
+        <button id="saveCurrentBtn" class="save-current-btn" title="Save current page">💾 Save</button>
+        <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <!-- AI Q&A Section -->
+    <div class="qa-section">
+      <h2>🤖 AI Search</h2>
+      <div class="qa-input-group">
+        <input type="text" id="qaInput" placeholder="Ask AI to find relevant links..." />
+        <button id="qaBtn">Ask</button>
+      </div>
+      <div id="qaResult" class="qa-result"></div>
+    </div>
+
+    <!-- Links List Section -->
+    <div class="links-section">
+      <h2>📚 Your Links (<span id="linkCount">0</span>)</h2>
+      <div id="linksList" class="links-list"></div>
+    </div>
+  </div>
+
+  <script src="node_modules/dexie/dist/dexie.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
